@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
+
 import Logo from "./Logo";
 import Search from "./Search";
 
