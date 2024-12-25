@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import MovieList from "./MovieList";
-
 import Logo from "./Logo";
-import Search from "./Search";
+import { Search } from "./Search";
+import { MovieList } from "./MovieList";
 
 export default function Movies() {
   //State;
   const [Movies, setMovies] = useState([]);
-  const [SearchValue, setSearchVlaue] = useState("");
+  const [SearchValue, setSearchValue] = useState("");
 
   //Comportement;
 
@@ -29,7 +28,7 @@ export default function Movies() {
           <Logo />
         </div>
         <div>
-          <Search SearchValue={SearchValue} setSearchVlaue={setSearchVlaue} />
+          <Search SearchValue={SearchValue} setSearchValue={setSearchValue} />
         </div>
       </header>
       <div className="flex flex-wrap justify-around">

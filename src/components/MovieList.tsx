@@ -1,6 +1,11 @@
+import React from "react";
 import { MovieListProps } from "./typescript/MoviesType";
 
-export default function MovieList({ Poster, Title, Year }: MovieListProps) {
+export const MovieList: React.FC<MovieListProps> = ({
+  Poster,
+  Title,
+  Year,
+}) => {
   return (
     <div>
       <div className="flex-auto my-6 mx-1.5 shadow-lg bg-neutral-300 rounded-xl">
@@ -22,4 +27,4 @@ export default function MovieList({ Poster, Title, Year }: MovieListProps) {
       </div>
     </div>
   );
-}
+};
