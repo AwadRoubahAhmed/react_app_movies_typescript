@@ -19,7 +19,7 @@ export const Search: React.FC<SearchProps> = ({
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             setSearchValue(event.target.value)
           }
-          className="border-2 bg-neutral-200 p-1 rounded-md capitalize"
+          className="input input-bordered w-full max-w-xs "
         />
         <button className="text-2xl text-white bg-slate-900 hover:bg-slate-700 ml-3 p-1 rounded-md">
           Search

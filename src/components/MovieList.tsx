@@ -11,7 +11,7 @@ export const MovieList: React.FC<MovieListProps> = ({
       <div className="flex-auto my-6 mx-1.5 shadow-lg bg-neutral-300 rounded-xl">
         <img
           src={Poster}
-          alt=""
+          alt={Title}
           className="w-96 h-80 cursor-pointer rounded-xl hover:translate-y-1 my-2"
         />
         <div className="">
