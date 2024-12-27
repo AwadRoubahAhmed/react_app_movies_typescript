@@ -22,8 +22,8 @@ export default function Movies() {
     getApiMovies();
   }, [SearchValue]);
   return (
-    <div className="">
-      <header className="w-full flex flex-wrap justify-around items-center text-xl bg-white shadow-md">
+    <div>
+      <header className="w-full min-h-16 mx-auto flex flex-wrap justify-around items-center text-xl bg-slate-950 shadow-2xl rounded-3xl">
         <div>
           <Logo />
         </div>
@@ -31,7 +31,7 @@ export default function Movies() {
           <Search SearchValue={SearchValue} setSearchValue={setSearchValue} />
         </div>
       </header>
-      <div className="flex flex-wrap justify-around">
+      <div className="flex flex-wrap justify-around ">
         {Movies.map((movie) => {
           return (
             <div>

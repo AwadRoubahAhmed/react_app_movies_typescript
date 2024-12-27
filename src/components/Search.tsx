@@ -11,7 +11,7 @@ export const Search: React.FC<SearchProps> = ({
 }) => {
   return (
     <div>
-      <form className="mb-3">
+      <form className="flex items-center mb-3">
         <input
           type="text"
           placeholder="Search movies by name..."
@@ -19,9 +19,9 @@ export const Search: React.FC<SearchProps> = ({
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             setSearchValue(event.target.value)
           }
-          className="input input-bordered w-full max-w-xs "
+          className="input input-bordered w-full max-w-xs text-xl capitalize"
         />
-        <button className="text-2xl text-white bg-slate-900 hover:bg-slate-700 ml-3 p-1 rounded-md">
+        <button className="btn btn-primary btn-outline text-xl text-white mx-2 ">
           Search
         </button>
       </form>
