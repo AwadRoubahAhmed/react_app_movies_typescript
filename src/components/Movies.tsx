@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Logo from "./Logo";
-import { Search } from "./Search";
-import { MovieList } from "./MovieList";
+import { useFilter } from "../context/Context";
+import MovieList from "./MovieList";
+import Search from "./Search";
 
 export default function Movies() {
   //State;
-  const [Movies, setMovies] = useState([]);
-  const [SearchValue, setSearchValue] = useState("");
+  const { movies, setMovies, searchValue, setSearchValue } = useFilter();
 
   //Comportement;
 
   useEffect(() => {
     const getApiMovies = async () => {
-      const url = `http://www.omdbapi.com/?s=${SearchValue}&apikey=5c7d750d`;
+      const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=5c7d750d`;
       const reponse = await fetch(url);
       const responseJson = await reponse.json();
       if (responseJson.Search) {
@@ -20,19 +20,19 @@ export default function Movies() {
       }
     };
     getApiMovies();
-  }, [SearchValue]);
+  }, [searchValue]);
   return (
-    <div>
-      <header className="w-full min-h-16 mx-auto flex flex-wrap justify-around items-center text-xl bg-slate-950 shadow-2xl rounded-3xl">
+    <div className="">
+      <header className="w-full flex flex-wrap justify-around items-center text-xl bg-white shadow-md">
         <div>
           <Logo />
         </div>
         <div>
-          <Search SearchValue={SearchValue} setSearchValue={setSearchValue} />
+          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         </div>
       </header>
-      <div className="flex flex-wrap justify-around ">
-        {Movies.map((movie) => {
+      <div className="flex flex-wrap justify-around">
+        {movies.map((movie) => {
           return (
             <div>
               <MovieList
